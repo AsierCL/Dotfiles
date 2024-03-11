@@ -41,27 +41,19 @@ super + shift + w
 
 super +shift + s
 	spotify-launcher
+
+super +shift + v
+	/usr/bin/code
+
+
 ##---------- System Keys ----------##
 
-# Take a screenshot
-Print
-	sh $HOME/.local/bin/takeshot --now
-	
-# Take screenshot in 5 second
-alt + Print	
-	sh $HOME/.local/bin/takeshot --in5
+# ScreenShots
+@Print
+	flameshot full
 
-# Take screenshot in 10 second
-shift + Print	
-	sh $HOME/.local/bin/takeshot --in10
-
-# Take screenshot of active window
-ctrl + Print
-	sh $HOME/.local/bin/takeshot --win
-
-# Take screenshot of area
-ctrl + alt + Print
-	sh $HOME/.local/bin/takeshot --area
+ctrl + @Print
+	flameshot gui
 
 # Manage brightness
 XF86MonBrightness{Up,Down}
@@ -78,6 +70,7 @@ XF86AudioMute
 # Music control
 XF86Audio{Next,Prev,Play,Stop}
 	mpc {next,prev,toggle,stop}
+
 
 ##---------- Bspwm ----------##
 

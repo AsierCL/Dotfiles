@@ -62,7 +62,7 @@ alias catn=/usr/bin/cat
 alias wifi="nmtui-connect"
 alias icat="kitty +kitten icat"
 alias cp="cp -r"
-
+alias dw="cd ~/Downloads/"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -83,17 +83,7 @@ function mkt(){
 	mkdir {nmap,content,exploits,scripts}
 }
 
-# Extract nmap information
-function extractPorts(){
-	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
-	ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
-	echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
-	echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
-	echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
-	echo $ports | tr -d '\n' | xclip -sel clip
-	echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
-	cat extractPorts.tmp; rm extractPorts.tmp
-}
+
 
 # Set 'man' colors
 function man() {
@@ -107,6 +97,8 @@ function man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     man "$@"
 }
+
+
 
 # fzf improvement
 function fzf-lovely(){

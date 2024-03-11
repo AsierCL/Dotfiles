@@ -9,25 +9,25 @@
 #   ╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝   #                                    
 ##################### By: Rxyhn  ####################
 
-# ##############################################################################
-# #                                  ENV VARS                                  # 
-# ##############################################################################
+###############################################################################
+##                                  ENV VARS                                  # 
+###############################################################################
 
 ## Environments
 export PATH="${PATH}:${HOME}/.config/bspwm/bin"
 
 
-# ##############################################################################
-# #                                  FUNCTIONS                                 # 
-# ##############################################################################
+###############################################################################
+##                                  FUNCTIONS                                 # 
+###############################################################################
 
 # Credits to 6gk/polka
 rule() { bspc rule -a "$@" & }
 config() { bspc config "$@" & }
 
-# ##############################################################################
-# #                                AUTOSTART APPS                              #
-# ##############################################################################
+###############################################################################
+##                                AUTOSTART APPS                              #
+###############################################################################
 
 # Run keybindings daemon.
 pgrep -x sxhkd > /dev/null || sxhkd &
@@ -53,9 +53,9 @@ feh --no-fehbg --bg-fill $HOME/.config/wallpapers/archkali.png
 # Fix cursor.
 xsetroot -cursor_name left_ptr 
 
-# ##############################################################################
-# #                                 WINDOW RULES                               #
-# ##############################################################################
+###############################################################################
+##                                 WINDOW RULES                               #
+###############################################################################
 
 if [[ $(xrandr -q | grep 'HDMI-1-1 connected') ]]; then
 	xrandr --output HDMI-1-1 --primary --mode 1920x1080 --rotate normal --output eDP-1 --mode 1920x1080 --rotate normal --left-of HDMI-1-1
@@ -67,31 +67,31 @@ fi
 
 rule -a kitty                       follow=on focus=on
 rule -a Code                        follow=on focus=on
-rule -a firefox                     follow=on focus=on
+rule -a brave                     	follow=on focus=on
 rule mpv                            state=floating
 rule feh                            state=floating
 
-# ##############################################################################
-# #                            GENERAL CONFIGURATION                           #
-# ##############################################################################
+###############################################################################
+##                            GENERAL CONFIGURATION                           #
+###############################################################################
 
-config border_width 4
-config window_gap 10
-config split_ratio 0.50
+bspc config border_width 0
+bspc config window_gap 10
+bspc config split_ratio 0.50
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config paddingless_monocle true
+bspc config focus_follows_pointer true
+bspc config pointer_modifier mod1
+bspc config normal_border_color '#1f1f1f'
+bspc config focused_border_color '#30302f'
+bspc config presel_feedback_color '#512da8'
 
-config borderless_monocle true
-config gapless_monocle true
-config focus_follows_pointer true
 
 #Idioma de teclado
 setxkbmap es &
 #Lanza a polybar
 polybar cyn-bar &
 #Conecta wifi eduroam
-nmcli device wifi connect eduroam
+nmcli device wifi connect eduroam &
 
-
-bspc config normal_border_color "$BACKGROUND"
-bspc config focused_border_color "$BACKGROUND"
-config presel_feedback_color "$BACKGROUND"
-pkill borders ; borders &
