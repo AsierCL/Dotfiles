@@ -1,4 +1,4 @@
-ç#################################################
+#################################################
 #	███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗		#
 #	██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗	#
 #	███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║	#
@@ -19,7 +19,11 @@ super + shift + Return
 
 # Open application menu
 super + m
-    sh $HOME/.local/bin/launcher
+	rofi nf-lazy-grab -disable-history -modi "drun" -show drun -location 1 -font "Comic Mono 10" -theme ~/.config/rofi/launcher.rasi -xoffset +75 -yoffset +10
+
+# Open power menu
+super + p
+	~/.config/rofi/powermenu.sh &
 
 # Toggle eww dashboard
 super + d
