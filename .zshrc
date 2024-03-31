@@ -63,6 +63,10 @@ alias wifi="nmtui-connect"
 alias icat="kitty +kitten icat"
 alias cp="cp -r"
 alias dw="cd ~/Downloads/"
+alias rmf="rm -rf"
+alias hide-polybar="polybar-msg cmd hide | bspc config top_padding 2"
+alias show-polybar="polybar-msg cmd show | bspc config top_padding 56"
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
