@@ -35,7 +35,7 @@ super + o
 
 # Lockscreen
 ctrl + alt + l
-    betterlockscreen -l
+    i3lock -i /home/osbby/.config/wallpapers/LockScreen.png
 
 ##---------- Applications ----------##
 
