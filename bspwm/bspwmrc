@@ -48,7 +48,7 @@ xfce4-power-manager &
 [ -n "$(pidof mpd)" ] || mpd &
 
 # Start X wallpaper.
-feh --no-fehbg --bg-fill $HOME/.config/wallpapers/archkali.png
+feh --no-fehbg --bg-fill $HOME/.config/wallpapers/3_sinlogo.png
 
 # Fix cursor.
 xsetroot -cursor_name left_ptr 
