@@ -1,0 +1,22 @@
+{
+	"all": {
+		"changeLogs": {
+			"BDFDB": "3.7.9",
+			"ReadAllNotificationsButton": "1.7.7",
+			"SpotifyControls": "1.4.0"
+		},
+		"choices": {
+			"toastPosition": "right"
+		},
+		"general": {
+			"shareData": true,
+			"showToasts": true,
+			"showSupportBadges": false,
+			"useChromium": false
+		},
+		"hashes": {
+			"0BDFDB.data.json": "77d4ee1ea6f2c200aba65902b0ad600033454bca",
+			"0BDFDB.raw.css": "5b43d81101400952eaac0b60060f000744df4f86"
+		}
+	}
+}
