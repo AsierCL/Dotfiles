@@ -12,7 +12,6 @@ config = [
     "polybar/",
     "powerlevel10k/",
     "rofi/",
-    "spicetify/",
     "sxhkd/",
     "wallpapers/",
 ]
