@@ -18,4 +18,5 @@ echo "System updated!"
 python3 /home/osbby/Documents/Proyectos/Dotfiles/update.py
 
 # Pushing changes to github
+cd /home/osbby/Documents/Proyectos/Dotfiles || exit 1
 sudo -u osbby /usr/local/bin/mygit.sh "Autoupdate"
