@@ -1,7 +1,7 @@
 {
 	"all": {
 		"changeLogs": {
-			"BDFDB": "3.7.9",
+			"BDFDB": "3.8.0",
 			"ReadAllNotificationsButton": "1.7.7",
 			"SpotifyControls": "1.4.0"
 		},
@@ -15,8 +15,8 @@
 			"useChromium": false
 		},
 		"hashes": {
-			"0BDFDB.data.json": "77d4ee1ea6f2c200aba65902b0ad600033454bca",
-			"0BDFDB.raw.css": "5b43d81101400952eaac0b60060f000744df4f86"
+			"0BDFDB.data.json": "9b7ad855c12571fc60f7a0d799368dc9d9386aff",
+			"0BDFDB.raw.css": "81dd52fb9f66039d356f9370779b76d476321e33"
 		}
 	}
 }
