@@ -15,7 +15,7 @@ pacman -Q > /home/osbby/Documents/Proyectos/Dotfiles/pacman-Q.txt
 echo "System updated!"
 
 # Copying dotfiles
-python3 /home/osbby/Documents/Proyectos/Dotfiles/update.py
+sudo python3 /home/osbby/Documents/Proyectos/Dotfiles/update.py
 
 # Pushing changes to github
 cd /home/osbby/Documents/Proyectos/Dotfiles || exit 1
