@@ -57,9 +57,9 @@ xsetroot -cursor_name left_ptr
 ##                                 WINDOW RULES                               #
 ###############################################################################
 
-if [[ $(xrandr -q | grep 'HDMI-1-1 connected') ]]; then
-	xrandr --output HDMI-1-1 --primary --mode 1920x1080 --rotate normal --output eDP-1 --mode 1920x1080 --rotate normal --left-of HDMI-1-1
-	bspc monitor HDMI-1-1 -d 1 2 3 4 5 6
+if [[ $(xrandr -q | grep 'HDMI-1-0 connected') ]]; then
+	xrandr --output HDMI-1-0 --primary --mode 1920x1080 --rotate normal --output eDP-1 --mode 1920x1080 --rotate normal --left-of HDMI-1-0
+	bspc monitor HDMI-1-0 -d 1 2 3 4 5 6
 	bspc monitor eDP-1 -d 7 8 9
 else
 	bspc monitor -d 1 2 3 4 5 6 7 8
