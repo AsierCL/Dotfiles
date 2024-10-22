@@ -30,7 +30,7 @@ if [ "$player_status" = "Playing" ]; then
     offset=$(cat "$offset_file")
     new_offset=$((offset + scroll_speed))
     echo "$new_offset" > "$offset_file"
-    echo " {$(scroll_text "$title       " $offset)}"
+    echo " {$(scroll_text "$title       " $offset)}"
 elif [ "$player_status" = "Paused" ]; then
     title=$(playerctl metadata title)
     offset_file="/tmp/polybar_player_offset"
@@ -40,7 +40,7 @@ elif [ "$player_status" = "Paused" ]; then
     offset=$(cat "$offset_file")
     new_offset=$((offset + scroll_speed))
     echo "$new_offset" > "$offset_file"
-    echo " {$(scroll_text "$title       " $offset)}"
+    echo " {$(scroll_text "$title       " $offset)}"
 else
     offset_file="/tmp/polybar_player_offset"
     if [ ! -f "$offset_file" ]; then

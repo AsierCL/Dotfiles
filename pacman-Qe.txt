@@ -17,7 +17,7 @@ cifs-utils 7.1-1
 crunch 3.6-1
 dhcp 4.4.3.P1-3
 dhcpcd 10.1.0-1
-discord 0.0.71-1
+discord 0.0.72-1
 dosfstools 4.2-5
 dunst 1.11.0-1
 efibootmgr 18-3
@@ -45,9 +45,9 @@ keyd 2.5.0-1
 kitty 0.36.4-1
 lib32-mesa 1:24.2.5-1
 librewolf-bin 131.0.3-1
-linux 6.11.4.arch1-1
+linux 6.11.4.arch2-1
 linux-firmware 20241017.22a6c7dc-1
-linux-headers 6.11.4.arch1-1
+linux-headers 6.11.4.arch2-1
 logisim-evolution-bin 3.9.0-1
 lsb-release 2.0.r53.a86f885-2
 lsd 1.1.5-1
@@ -55,12 +55,13 @@ lxappearance 0.6.3-5
 mesa-utils 9.0.0-5
 mkinitcpio 39.2-2
 nano 8.2-1
+ncdu 2.6-1
 neofetch 7.1.0-2
 neovim 0.10.2-2
 networkmanager 1.50.0-1
 noto-fonts-emoji 1:2.047-1
 ntfs-3g 2022.10.3-1
-nvidia 560.35.03-15
+nvidia 560.35.03-16
 nvidia-prime 1.0-5
 nvidia-settings 560.35.03-1
 nvidia-utils 560.35.03-16
@@ -86,6 +87,7 @@ pulseaudio 17.0-3
 pulseaudio-alsa 1:1.2.12-3
 pulseaudio-bluetooth 17.0-3
 qbittorrent 5.0.0-1
+rclone 1.68.1-1
 rofi 1.7.5-3
 rpi-imager 1.9.0-3
 samba 2:4.21.1-1
