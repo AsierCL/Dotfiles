@@ -1,7 +1,6 @@
 {
-    "BDFDB": true,
-    "ZeresPluginLibrary": false,
-    "CallTimeCounter": true,
-    "ReadAllNotificationsButton": true,
-    "SpotifyControls": true
+    "BDFDB": false,
+    "CallTimeCounter": false,
+    "ReadAllNotificationsButton": false,
+    "SpotifyControls": false
 }

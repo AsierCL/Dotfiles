@@ -54,10 +54,10 @@ super +shift + v
 
 # ScreenShots
 @Print
-	flameshot full
+	maim | xclip -selection clipboard -t image/png
 
 ctrl + @Print
-	flameshot gui
+	maim -s | xclip -selection clipboard -t image/png
 
 # Manage brightness
 XF86MonBrightness{Up,Down}
