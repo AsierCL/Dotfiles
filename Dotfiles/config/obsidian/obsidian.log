@@ -1,0 +1,127 @@
+2024-10-30 19:18:05 Loading main app package /usr/lib/obsidian/obsidian.asar
+2024-10-30 19:18:05 Checking for update using Github
+2024-10-30 19:18:05 Success.
+2024-10-30 19:18:05 Latest version is 1.7.4
+2024-10-30 19:18:05 App is up to date.
+2024-11-04 19:25:51 Loading main app package /usr/lib/obsidian/obsidian.asar
+2024-11-04 19:25:51 Checking for update using Github
+2024-11-04 19:25:51 Success.
+2024-11-04 19:25:51 Latest version is 1.7.4
+2024-11-04 19:25:51 App is up to date.
+2024-11-04 20:25:51 Checking for update using Github
+2024-11-04 20:25:51 Success.
+2024-11-04 20:25:51 Latest version is 1.7.4
+2024-11-04 20:25:51 App is up to date.
+2024-11-04 21:25:51 Checking for update using Github
+2024-11-04 21:25:51 Success.
+2024-11-04 21:25:51 Latest version is 1.7.5
+2024-11-04 21:25:51 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.7.5/obsidian-1.7.5.asar.gz
+2024-11-04 21:25:52 Verifying hash & signature. Size= 8056498
+2024-11-04 21:25:52 Saving file
+2024-11-04 21:25:52 Update complete.
+2024-11-04 22:25:51 Checking for update using Github
+2024-11-04 22:25:51 Success.
+2024-11-04 22:25:51 Latest version is 1.7.5
+2024-11-04 22:25:51 An update is already downloaded.
+2024-11-05 08:02:56 Loading updated app package /home/osbby/.config/obsidian/obsidian-1.7.5.asar
+2024-11-05 08:02:56 Checking for update using Github
+2024-11-05 08:02:57 Failed to check for update using Github (net::ERR_NETWORK_CHANGED)
+2024-11-05 08:02:57 Checking for update using obsidian.md
+2024-11-05 08:02:57 Failed to check for update using obsidian.md (net::ERR_NETWORK_CHANGED)
+2024-11-05 09:02:56 Checking for update using Github
+2024-11-05 09:02:56 Success.
+2024-11-05 09:02:56 Latest version is 1.7.5
+2024-11-05 09:02:56 App is up to date.
+2024-11-05 10:47:20 Checking for update using Github
+2024-11-05 10:47:21 Success.
+2024-11-05 10:47:21 Latest version is 1.7.5
+2024-11-05 10:47:21 App is up to date.
+2024-11-05 19:26:06 Loading updated app package /home/osbby/.config/obsidian/obsidian-1.7.5.asar
+2024-11-05 19:26:06 Checking for update using Github
+2024-11-05 19:26:06 Success.
+2024-11-05 19:26:06 Latest version is 1.7.5
+2024-11-05 19:26:06 App is up to date.
+2024-11-05 20:26:06 Checking for update using Github
+2024-11-05 20:26:06 Success.
+2024-11-05 20:26:06 Latest version is 1.7.5
+2024-11-05 20:26:06 App is up to date.
+2024-11-05 21:26:06 Checking for update using Github
+2024-11-05 21:26:06 Success.
+2024-11-05 21:26:06 Latest version is 1.7.5
+2024-11-05 21:26:06 App is up to date.
+2024-11-05 22:26:06 Checking for update using Github
+2024-11-05 22:26:06 Success.
+2024-11-05 22:26:06 Latest version is 1.7.5
+2024-11-05 22:26:06 App is up to date.
+2024-11-06 08:27:07 Loading main app package /usr/lib/obsidian/obsidian.asar
+2024-11-06 08:27:07 Checking for update using Github
+2024-11-06 08:27:07 Success.
+2024-11-06 08:27:07 Latest version is 1.7.5
+2024-11-06 08:27:07 App is up to date.
+2024-11-06 09:37:42 Checking for update using Github
+2024-11-06 09:37:43 Success.
+2024-11-06 09:37:43 Latest version is 1.7.5
+2024-11-06 09:37:43 App is up to date.
+2024-11-06 10:37:42 Checking for update using Github
+2024-11-06 10:37:42 Success.
+2024-11-06 10:37:42 Latest version is 1.7.5
+2024-11-06 10:37:42 App is up to date.
+2024-11-06 15:40:29 Loading main app package /usr/lib/obsidian/obsidian.asar
+2024-11-06 15:40:30 Checking for update using Github
+2024-11-06 15:40:30 Success.
+2024-11-06 15:40:30 Latest version is 1.7.5
+2024-11-06 15:40:30 App is up to date.
+2024-11-07 16:10:54 Loading main app package /usr/lib/obsidian/obsidian.asar
+2024-11-07 16:10:54 Checking for update using Github
+2024-11-07 16:10:55 Success.
+2024-11-07 16:10:55 Latest version is 1.7.5
+2024-11-07 16:10:55 App is up to date.
+2024-11-07 18:40:31 Loading main app package /usr/lib/obsidian/obsidian.asar
+2024-11-07 18:40:31 Checking for update using Github
+2024-11-07 18:40:31 Success.
+2024-11-07 18:40:31 Latest version is 1.7.5
+2024-11-07 18:40:31 App is up to date.
+2024-11-07 19:40:31 Checking for update using Github
+2024-11-07 19:40:31 Success.
+2024-11-07 19:40:31 Latest version is 1.7.5
+2024-11-07 19:40:31 App is up to date.
+2024-11-09 15:56:41 Loading main app package /usr/lib/obsidian/obsidian.asar
+2024-11-09 15:56:41 Checking for update using Github
+2024-11-09 15:56:41 Success.
+2024-11-09 15:56:41 Latest version is 1.7.5
+2024-11-09 15:56:41 App is up to date.
+2024-11-09 16:56:41 Checking for update using Github
+2024-11-09 16:56:41 Success.
+2024-11-09 16:56:41 Latest version is 1.7.5
+2024-11-09 16:56:41 App is up to date.
+2024-11-09 17:11:00 Loading main app package /usr/lib/obsidian/obsidian.asar
+2024-11-09 17:11:00 Checking for update using Github
+2024-11-09 17:11:22 Loading main app package /usr/lib/obsidian/obsidian.asar
+2024-11-09 17:11:22 Checking for update using Github
+2024-11-10 18:35:39 Loading main app package /usr/lib/obsidian/obsidian.asar
+2024-11-10 18:35:39 Checking for update using Github
+2024-11-10 18:35:39 Success.
+2024-11-10 18:35:39 Latest version is 1.7.5
+2024-11-10 18:35:39 App is up to date.
+2024-11-10 19:35:39 Checking for update using Github
+2024-11-10 19:35:39 Success.
+2024-11-10 19:35:39 Latest version is 1.7.5
+2024-11-10 19:35:39 App is up to date.
+2024-11-11 08:41:38 Loading main app package /usr/lib/obsidian/obsidian.asar
+2024-11-11 08:41:38 Checking for update using Github
+2024-11-11 08:41:38 Success.
+2024-11-11 08:41:38 Latest version is 1.7.5
+2024-11-11 08:41:38 App is up to date.
+2024-11-11 09:41:38 Checking for update using Github
+2024-11-11 09:41:39 Success.
+2024-11-11 09:41:39 Latest version is 1.7.5
+2024-11-11 09:41:39 App is up to date.
+2024-11-13 16:06:21 Loading main app package /usr/lib/obsidian/obsidian.asar
+2024-11-13 16:06:21 Checking for update using Github
+2024-11-13 16:06:21 Failed to check for update using Github (net::ERR_INTERNET_DISCONNECTED)
+2024-11-13 16:06:21 Checking for update using obsidian.md
+2024-11-13 16:06:21 Failed to check for update using obsidian.md (net::ERR_INTERNET_DISCONNECTED)
+2024-11-13 17:06:21 Checking for update using Github
+2024-11-13 17:06:22 Success.
+2024-11-13 17:06:22 Latest version is 1.7.6
+2024-11-13 17:06:22 App is up to date.
