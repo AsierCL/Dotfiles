@@ -1,3 +1,12 @@
+#echo '
+#.------..------..------..------..------.
+#|O.--. ||S.--. ||B.--. ||B.--. ||Y.--. |
+#| :/\: || :/\: || :(): || :(): || (\/) |
+#| :\/: || :\/: || ()() || ()() || :\/: |
+#| ´--´O|| ´--´S|| ´--´B|| ´--´B|| ´--´Y|
+#´------´´------´´------´´------´´------´
+#'
+
 # Fix the Java Problem
 export _JAVA_AWT_WM_NONREPARENTING=1
 
@@ -66,6 +75,9 @@ alias dw="cd ~/Downloads/"
 alias rmf="rm -rf"
 alias hide-polybar="polybar-msg cmd hide | bspc config top_padding 2"
 alias show-polybar="polybar-msg cmd show | bspc config top_padding 56"
+alias nano="nvim"
+alias vpnon="sudo wg-quick up ArchPavillon"
+alias vpnoff="sudo wg-quick down ArchPavillon"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
