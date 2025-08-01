@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+[user]
+	email = asiercl.05@gmail.com
+	name = AsierCL
