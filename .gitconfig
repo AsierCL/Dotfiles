@@ -5,3 +5,5 @@
 [user]
 	email = asiercl.05@gmail.com
 	name = AsierCL
+[core]
+	editor = code --wait
