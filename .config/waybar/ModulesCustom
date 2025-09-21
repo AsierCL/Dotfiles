@@ -124,7 +124,7 @@
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
 	"smooth-scrolling-threshold": 1,
 },
-    
+
 "custom/power": {
 	"format": "⏻ ",
 	"on-click": "$HOME/.config/hypr/scripts/Wlogout.sh",
