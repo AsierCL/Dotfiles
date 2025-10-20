@@ -287,3 +287,4 @@ bindkey -M vicmd "^M" buffer-empty
 
 
 #####  EOF  ######
+eval "$(zoxide init --cmd cd zsh)"
