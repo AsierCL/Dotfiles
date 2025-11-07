@@ -20,6 +20,8 @@ alias vpnon="sudo wg-quick up ArchPavillon"
 alias vpnoff="sudo wg-quick down ArchPavillon"
 alias obsidian="env --unset=WAYLAND_DISPLAY obsidian --enable-features=UseOzonePlatform --ozone-platform=x11"
 alias browse="zen-browser"
+alias gpush='git add . && git commit -m "." && git push'
+
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
