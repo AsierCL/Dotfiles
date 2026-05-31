@@ -1,0 +1,15 @@
+.cache/
+.local/share/
+.mozilla/
+.steam/
+.minecraft/
+.gradle/
+.java/
+.dotnet/
+.m2/
+.npm/
+.vscode/
+.gsutil/
+.sts4/
+.zen/
+*.bak
