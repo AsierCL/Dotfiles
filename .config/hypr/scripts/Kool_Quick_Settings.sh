@@ -16,8 +16,7 @@ UserConfigs="$HOME/.config/hypr/UserConfigs"
 rofi_theme="$HOME/.config/rofi/config-edit.rasi"
 msg=' ⁉️ Choose what to do ⁉️'
 iDIR="$HOME/.config/swaync/images"
-scriptsDir="$HOME/.config/hypr/scripts"
-UserScripts="$HOME/.config/hypr/UserScripts"
+source "$HOME/.config/hypr/scripts/common.sh"
 
 # Function to display the menu options without numbers
 menu() {
@@ -63,7 +62,7 @@ main() {
         "view/edit Animations") file="$UserConfigs/UserAnimations.conf" ;;
         "view/edit Laptop Keybinds") file="$UserConfigs/Laptops.conf" ;;
         "view/edit Default Keybinds") file="$configs/Keybinds.conf" ;;
-        "Choose Kitty Terminal Theme") $scriptsDir/Kitty_themes.sh ;;
+        "Choose Kitty Terminal Theme") $SCRIPTSDIR/Kitty_themes.sh ;;
         "Configure Monitors (nwg-displays)") 
             if ! command -v nwg-displays &>/dev/null; then
                 notify-send -i "$iDIR/error.png" "E-R-R-O-R" "Install nwg-displays first"
@@ -94,12 +93,12 @@ main() {
                 exit 1
             fi
             qt5ct ;;
-        "Choose Hyprland Animations") $scriptsDir/Animations.sh ;;
-        "Choose Monitor Profiles") $scriptsDir/MonitorProfiles.sh ;;
-        "Choose Rofi Themes") $scriptsDir/RofiThemeSelector.sh ;;
-        "Search for Keybinds") $scriptsDir/KeyBinds.sh ;;
-        "Toggle Game Mode") $scriptsDir/GameMode.sh ;;
-        "Switch Dark-Light Theme") $scriptsDir/DarkLight.sh ;;
+        "Choose Hyprland Animations") $SCRIPTSDIR/Animations.sh ;;
+        "Choose Monitor Profiles") $SCRIPTSDIR/MonitorProfiles.sh ;;
+        "Choose Rofi Themes") $SCRIPTSDIR/RofiThemeSelector.sh ;;
+        "Search for Keybinds") $SCRIPTSDIR/KeyBinds.sh ;;
+        "Toggle Game Mode") $SCRIPTSDIR/GameMode.sh ;;
+        "Switch Dark-Light Theme") $SCRIPTSDIR/DarkLight.sh ;;
         *) return ;;  # Do nothing for invalid choices
     esac
 

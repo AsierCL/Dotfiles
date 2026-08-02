@@ -4,34 +4,6 @@
 /* NOTE: This is only for Groups */
 
 {
-// GROUPS
-"group/app_drawer": {
-	"orientation": "inherit",
-	"drawer": {
-		"transition-duration": 500,
-		"children-class": "custom/menu",
-		"transition-left-to-right": true
-        },
-	"modules": [
-		"custom/menu",
-		"custom/light_dark",
-		"custom/file_manager",
-		"custom/tty",
-		"custom/browser",
-		"custom/settings",
-	]
-},
-"group/motherboard": {
-	"orientation": "horizontal",
-	"modules": [
-		"cpu",
-		"power-profiles-daemon",
-		"memory",
-		"temperature",
-		"disk",
-	]
-},
-
 "group/mobo_drawer": {
 	"orientation": "inherit",
 	"drawer": {

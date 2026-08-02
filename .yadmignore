@@ -13,3 +13,71 @@
 .sts4/
 .zen/
 *.bak
+
+# Electron/Chromium app state & caches
+.config/zen/
+.config/Code/*Cache*/
+.config/Code/CachedData/
+.config/Code/CachedExtensionVSIXs/
+.config/Code/CachedProfilesData/
+.config/Code/Code Cache/
+.config/Code/Backups/
+.config/Code/History/
+.config/Code/globalStorage/
+.config/Code/workspaceStorage/
+.config/Code/Speech/
+.config/Code/Crashpad/
+.config/Code/logs/
+.config/Code/Local Storage/
+.config/Code/Session Storage/
+.config/Code/GPUCache/
+.config/Code/Dawn*/
+.config/Code/Cookies*
+.config/Code/org.chromium.*
+.config/Code Code/
+.config/discord/
+.config/vesktop/
+.config/Postman/
+.config/Antigravity/
+.config/balenaEtcher/
+.config/google-chrome-for-testing/
+.config/chromium/
+.config/obsidian/
+.config/Electron/
+.config/VirtualBox/
+.config/Android Open Source Project/
+
+# Browser profile data
+.config/mozilla/
+
+# Node/bun state inside configs
+.config/opencode/node_modules/
+.config/opencode/bun.lock
+.config/opencode/package.json
+.config/opencode/package-lock.json
+
+# Dev tooling state
+.config/nvim/lazy-lock.json
+.config/flutter/
+.config/dart-tool/
+
+# Media/runtime junk
+.config/spotify/
+.config/yay/
+.config/yadm/
+.config/ffuf/
+.config/frida/
+.config/ghidra/
+
+# Other state dirs
+.config/dconf/
+.config/glib-2.0/
+.config/deadlocked/
+.config/create-next-app-nodejs/
+.config/nextjs-nodejs/
+.config/turborepo/
+.config/nwg-look/
+.config/onlyoffice/
+.config/virt-viewer/
+.config/visidata/
+.config/xarchiver/

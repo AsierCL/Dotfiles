@@ -1,9 +1,8 @@
 #!/bin/bash
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# Scripts for refreshing ags, waybar, rofi, swaync, wallust
+# Scripts for refreshing waybar, rofi, swaync, wallust
 
-SCRIPTSDIR=$HOME/.config/hypr/scripts
-UserScripts=$HOME/.config/hypr/UserScripts
+source "$HOME/.config/hypr/scripts/common.sh"
 
 # Define file_exists function
 file_exists() {
@@ -15,7 +14,7 @@ file_exists() {
 }
 
 # Kill already running processes
-_ps=(waybar rofi swaync ags)
+_ps=(waybar rofi swaync)
 for _prs in "${_ps[@]}"; do
     if pidof "${_prs}" >/dev/null; then
         pkill "${_prs}"
@@ -25,11 +24,8 @@ done
 # added since wallust sometimes not applying
 killall -SIGUSR2 waybar 
 
-# quit ags & relaunch ags
-#ags -q && ags &
-
 # some process to kill
-for pid in $(pidof waybar rofi swaync ags swaybg); do
+for pid in $(pidof waybar rofi swaync swaybg); do
     kill -SIGUSR1 "$pid"
 done
 

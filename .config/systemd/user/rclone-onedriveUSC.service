@@ -1,0 +1,19 @@
+[Unit]
+Description=RClone mount for OneDrive (USC)
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount USC: %h/USC \
+    --config=%h/.config/rclone/rclone.conf \
+    --vfs-cache-mode writes \
+    --vfs-cache-max-size 200M \
+    --dir-cache-time 72h \
+    --allow-other
+ExecStop=/usr/bin/fusermount -u %h/USC
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target
+

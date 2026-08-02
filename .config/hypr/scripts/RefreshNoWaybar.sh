@@ -5,8 +5,7 @@
 # Used by automatic wallpaper change
 # Modified inorder to refresh rofi background, Wallust, SwayNC only
 
-SCRIPTSDIR=$HOME/.config/hypr/scripts
-UserScripts=$HOME/.config/hypr/UserScripts
+source "$HOME/.config/hypr/scripts/common.sh"
 
 # Define file_exists function
 file_exists() {
@@ -24,9 +23,6 @@ for _prs in "${_ps[@]}"; do
         pkill "${_prs}"
     fi
 done
-
-# quit ags & relaunch ags
-#ags -q && ags &
 
 # Wallust refresh
 ${SCRIPTSDIR}/WallustSwww.sh &
