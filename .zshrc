@@ -6,3 +6,4 @@ source "$ZSH_CONFIG/history.zsh"
 source "$ZSH_CONFIG/plugins.zsh"
 source "$ZSH_CONFIG/aliases.zsh"
 source "$ZSH_CONFIG/theme-mnml.zsh"
+export PATH=$PATH:~/go/bin

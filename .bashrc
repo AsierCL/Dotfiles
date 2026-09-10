@@ -10,3 +10,4 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
+export PATH=$PATH:~/go/bin
