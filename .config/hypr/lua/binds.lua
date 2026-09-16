@@ -75,6 +75,9 @@ hl.bind(M .. " + V", hl.dsp.exec_cmd(
   "cliphist list | rofi -dmenu -config " .. V.home .. "/.config/rofi/config-clipboard.rasi | cliphist decode | wl-copy"
 ), { description = "Clipboard history" })
 
+-- Notification center (swaync) toggle
+hl.bind(M .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"), { description = "Notification center" })
+
 -- Keybind cheatsheet (curated list in scripts/KeyHints.sh; keep it in sync
 -- when you add binds here). SUPER + ? is Shift + / on most layouts.
 hl.bind(M .. " + question", hl.dsp.exec_cmd(S .. "/KeyHints.sh"), { description = "Keybind cheatsheet" })

@@ -1,13 +1,14 @@
 /* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
 /* swaync colors - wallust from waybar.css */
 
-@import '../../.config/waybar/wallust/colors-waybar.css';
+@import '/home/osbby/.cache/wallust/colors-waybar.css';
 
-@define-color noti-border-color @color12;
-@define-color noti-bg rgba(0, 0, 0, 0.8);
-@define-color noti-bg-alt @background-alt;
+@define-color noti-border-color @blue;
+@define-color noti-bg rgba(0, 0, 0, 0.92);
+@define-color noti-bg-alt @surface2;
 @define-color noti-bg-hover @background;
-@define-color text-color @foreground;
+@define-color text-color @text;
+@define-color noti-danger @red;
 
 * {
     font-family: "JetBrains Mono Nerd Font";
@@ -46,8 +47,8 @@
 }
 
 .close-button {
-    background: #f7768e;
-    color: @noti-bg;
+    background: @noti-danger;
+    color: @text;
     text-shadow: none;
     padding: 0;
     border-radius: 10px;
@@ -57,7 +58,8 @@
 
 .close-button:hover {
     box-shadow: none;
-    background: #f7768e;
+    background: @noti-danger;
+    color: @text;
     transition: all .15s ease-in-out;
     border: none
 }
@@ -83,8 +85,8 @@
 }
 
 .notification-default-action:not(:only-child) {
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px
 }
 
 .notification-action:first-child {
@@ -143,10 +145,9 @@
 }
 
 .time {
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 0.85rem;
     background: transparent;
-    color: @text-color;
+    color: @subtext0;
     text-shadow: none;
     margin-right: 18px
 }
@@ -164,6 +165,7 @@
     border: 1px solid @noti-border-color;
 	color: @text-color;
     border-radius: 10px;
+    padding: 6px;
 }
 
 .control-center-list {
@@ -172,6 +174,16 @@
 
 .control-center-list-placeholder {
     opacity: 0.5
+}
+
+/* The empty-state ships an icon missing from most themes: hide the broken
+ * image, keep the "No Notifications" label. */
+.control-center-list-placeholder image {
+    opacity: 0;
+    min-height: 0;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .floating-notifications {
@@ -196,13 +208,14 @@
     color: @text-color;
     border-radius: 10px;
 	background: transparent;
-	border: 0.5px solid @noti-border-color;
+	border: 1px solid @noti-border-color;
+    padding: 2px 12px;
 }
 
 /* clear button */
 .widget-title>button:hover {
-    background: @text-color;
-    color: red;
+    background: @noti-border-color;
+    color: @noti-bg;
 }
 
 .widget-dnd {
@@ -216,22 +229,22 @@
 
 .widget-dnd>switch {
     border-radius: 10px;
-    border: 1px solid #7aa2f7;
-    background: @noti-border-color;
+    border: 1px solid @blue;
+    background-color: @surface2;
 }
 
 .widget-dnd>switch:checked {
-    background: #f7768e;
-    border: 1px solid #f7768e;
+    background-color: @blue;
+    border: 1px solid @blue;
 }
 
 .widget-dnd>switch slider {
-    background: @noti-bg;
+    background-color: @text;
     border-radius: 10px
 }
 
 .widget-dnd>switch:checked slider {
-    background: @noti-bg;
+    background-color: @text;
     border-radius: 10px
 }
 
@@ -244,12 +257,14 @@
     color: @text-color;
 }
 
+/* Single flat card: the inner player box must not draw a second frame. */
 .widget-mpris {
     color: @text-color;
     background: @noti-bg;
     padding: 3px 6px;
     margin: 5px;
     border-radius: 10px;
+    border: 1px solid @noti-border-color;
 }
 
 .widget-mpris > box > button {
@@ -257,8 +272,9 @@
 }
 
 .widget-mpris-player {
+    background: transparent;
     padding: 3px 6px;
-    margin: 5px;
+    margin: 0;
 }
 
 .widget-mpris-title {
@@ -309,6 +325,31 @@
     border-radius: 10px;
     font-size: x-large;
     color: @text-color
+}
+
+/* Theme the sliders (trough / fill / knob) instead of GTK defaults. */
+.widget-volume scale trough,
+.widget-backlight scale trough {
+    background: @surface0;
+    border: 1px solid @noti-border-color;
+    border-radius: 10px;
+    min-height: 8px;
+}
+
+.widget-volume scale highlight,
+.widget-backlight scale highlight {
+    background: @noti-border-color;
+    border-radius: 10px;
+}
+
+.widget-volume scale slider,
+.widget-backlight scale slider {
+    background: @text-color;
+    border: none;
+    border-radius: 50%;
+    min-height: 14px;
+    min-width: 14px;
+    margin: -5px;
 }
 
 .widget-volume>box>button {
