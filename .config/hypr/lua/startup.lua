@@ -7,16 +7,14 @@
 -- hl.exec_cmd("spotify", { workspace = "10 silent" }). For cleanup on exit,
 -- listen to "hyprland.shutdown" the same way. Wiki: core/autostart.
 
-local V = require("lua.vars")
-
 hl.on("hyprland.start", function()
   -- D-Bus / systemd environment
   hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
   hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 
-  -- Wallpaper + theme (were exec-once in UserDecorations.conf)
-  hl.exec_cmd("swaybg -i " .. V.wallpaper .. " -m fill")
-  hl.exec_cmd("wallust run " .. V.wallpaper)
+  -- Wallpaper + theme are applied by lua/colors.lua at EVERY config load
+  -- (it runs wallust + restarts swaybg when vars.lua's path changed), so
+  -- nothing wallpaper-related is needed here. hyprlock keeps its own image.
 
   -- Bar / applets (nm-applet, swaync, blueman-applet were commented out)
   hl.exec_cmd("waybar")
@@ -25,10 +23,9 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("wl-paste --type text --watch cliphist store")
   hl.exec_cmd("wl-paste --type image --watch cliphist store")
 
-  -- Idle daemon + scratchpads/zoom daemon
+  -- Idle daemon + scratchpads/zoom daemon + night light
+  -- (hyprsunset needs `sudo pacman -S hyprsunset`; profiles in hypr/hyprsunset.conf)
   hl.exec_cmd("hypridle")
+  hl.exec_cmd("hyprsunset")
   hl.exec_cmd("pypr")
-
-  -- Mouse sensitivity script (was exec-once in hyprland.conf)
-  hl.exec_cmd(V.scriptsDir .. "/MouseSettings.sh")
 end)

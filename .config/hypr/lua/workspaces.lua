@@ -6,8 +6,8 @@
 -- Discord (ws 7) and Spotify (ws 10) pinned to secondary monitor (HDMI-A-1).
 -- On laptop (no HDMI-A-1) the rule falls back, only the number applies.
 
-hl.workspace_rule({ workspace = "7", monitor = "HDMI-A-1" })
-hl.workspace_rule({ workspace = "10", monitor = "HDMI-A-1" })
+hl.workspace_rule({ workspace = "7", monitor = "desc:Fujitsu Siemens Computers GmbH P24W-6 LED YV5L004610" })
+hl.workspace_rule({ workspace = "10", monitor = "desc:Fujitsu Siemens Computers GmbH P24W-6 LED YV5L004610" })
 
 -- Examples (from old workspaces.conf comments):
 -- hl.workspace_rule({ workspace = "1", monitor = "eDP-1" })

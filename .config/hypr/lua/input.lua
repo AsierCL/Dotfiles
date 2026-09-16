@@ -88,6 +88,13 @@ hl.config({
     warp_on_change_workspace = 2,
     no_warps = true,
   },
+  ecosystem = {
+    no_donation_nag = true, -- hide the donation notice at startup
+    no_update_news = true, -- hide update news in the log
+    -- Stricter permission model for plugins/IPC (wiki: advanced-configuration/permissions).
+    -- Takes effect on full RESTART, not on `hyprctl reload`.
+    enforce_permissions = true,
+  },
 })
 
 -- Per-device: laptop touchpad (<- Laptops.conf $Touchpad_Device / $TOUCHPAD_ENABLED)

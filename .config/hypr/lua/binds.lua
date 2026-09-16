@@ -70,6 +70,15 @@ hl.bind(M .. " + SHIFT + S", hl.dsp.exec_cmd(S .. "/ScreenShot.sh --swappy"))
 -- Rofi emoji
 hl.bind(M .. " + E", hl.dsp.exec_cmd(S .. "/RofiEmoji.sh"))
 
+-- Clipboard history (cliphist daemon runs at startup; pick & copy back)
+hl.bind(M .. " + V", hl.dsp.exec_cmd(
+  "cliphist list | rofi -dmenu -config " .. V.home .. "/.config/rofi/config-clipboard.rasi | cliphist decode | wl-copy"
+), { description = "Clipboard history" })
+
+-- Keybind cheatsheet (curated list in scripts/KeyHints.sh; keep it in sync
+-- when you add binds here). SUPER + ? is Shift + / on most layouts.
+hl.bind(M .. " + question", hl.dsp.exec_cmd(S .. "/KeyHints.sh"), { description = "Keybind cheatsheet" })
+
 -- Resize (repeat on hold)
 hl.bind(M .. " + CTRL + left", hl.dsp.window.resize({ x = -50, y = 0, relative = true }), { repeating = true })
 hl.bind(M .. " + CTRL + right", hl.dsp.window.resize({ x = 50, y = 0, relative = true }), { repeating = true })
@@ -126,9 +135,23 @@ hl.bind(M .. " + Return", hl.dsp.exec_cmd(V.term))
 hl.bind(M .. " + T", hl.dsp.exec_cmd(V.files))
 hl.bind(M .. " + B", hl.dsp.exec_cmd(V.browser))
 hl.bind(M .. " + ALT + C", hl.dsp.exec_cmd(US .. "/RofiCalc.sh"))
-hl.bind(M .. " + SHIFT + Return", hl.dsp.exec_cmd("pypr toggle term")) -- pypr dropdown
+hl.bind(M .. " + SHIFT + Return", hl.dsp.exec_cmd("pypr toggle term")) -- pypr dropdown term
+hl.bind(M .. " + SHIFT + T", hl.dsp.exec_cmd("pypr toggle files")) -- pypr dropdown files (ranger, see pyprland.toml)
 hl.bind(M .. " + Z", hl.dsp.exec_cmd("pypr zoom"))
 hl.bind(M .. " + ALT + K", hl.dsp.exec_cmd(S .. "/SwitchKeyboardLayout.sh"), { non_consuming = true })
+
+-- Night light toggle (hyprsunset must be running, see startup.lua).
+-- Flips between warm 4500K and neutral; the time profiles in
+-- hypr/hyprsunset.conf override this at the next profile time.
+local nightLight = false
+hl.bind(M .. " + CTRL + S", function()
+  nightLight = not nightLight
+  if nightLight then
+    hl.dispatch(hl.dsp.exec_cmd("hyprctl hyprsunset temperature 4500"))
+  else
+    hl.dispatch(hl.dsp.exec_cmd("hyprctl hyprsunset identity"))
+  end
+end, { description = "Night light toggle" })
 
 -- ---- Laptop keys (<- Laptops.conf) ----
 hl.bind("XF86KbdBrightnessDown", hl.dsp.exec_cmd(S .. "/BrightnessKbd.sh --dec"), { repeating = true })

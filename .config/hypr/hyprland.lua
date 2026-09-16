@@ -11,6 +11,7 @@
 --   lua/workspaces.lua workspace -> monitor assignment
 --   lua/style.lua      borders/gaps/decoration/wallust colors + animations
 --   lua/input.lua      keyboard/mouse/touchpad, layouts, misc, cursor…
+--   lua/devices.lua    dynamic pointer sensitivity on dock/undock
 --   lua/rules.lua      window + layer rules (tags, float, opacity…)
 --   lua/binds.lua      ALL keybinds, incl. laptop Fn keys
 --   lua/gestures.lua   trackpad gestures (>= 0.51 syntax)
@@ -33,6 +34,7 @@ require("lua.monitors") -- monitor layout (+ laptop placeholder)
 require("lua.workspaces") -- workspace -> monitor assignment
 require("lua.style") -- borders/gaps/decoration/colors + animations
 require("lua.input") -- layouts/input/misc/binds-opts/cursor + touchpad device
+require("lua.devices") -- dynamic sensitivity (external mouse vs touchpad)
 require("lua.rules") -- window + layer rules
 require("lua.binds") -- all keybinds (incl. laptop keys)
 require("lua.gestures") -- trackpad gestures (>= 0.51 syntax)

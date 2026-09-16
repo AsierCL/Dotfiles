@@ -1,13 +1,16 @@
--- WALLUST PALETTE — dynamic theme colors shared by style.lua.
--- The old hyprlang setup did `source ~/.cache/wallust/colors-hyprland.conf`
--- which defined $background/$foreground/$color0-15. Lua can't `source`
--- hyprlang, so we parse that same generated file at (re)load time instead.
--- HOW TO:
---   · Nothing to do normally: `wallust run <wallpaper>` regenerates the
---     cache file, then `hyprctl reload` applies it here + in style.lua.
---   · To freeze a static palette (ignore wallust), just edit the fallback
---     values below and delete/rename the cache file.
--- Fallback values mirror hypr/wallust/wallust-hyprland.conf (template).
+-- DYNAMIC PALETTE (wallust) tied to the wallpaper path in lua/vars.lua.
+-- FLOW: edit the `wallpaper` path in vars.lua by hand -> `hyprctl reload` ->
+--   this module 1) runs `wallust run <new>` (regenerates the cache),
+--   2) restarts swaybg on the new image, 3) parses the fresh cache into the
+--   C.color* table used by style.lua. Same as the old .conf behaviour, but
+--   driven by the path edit instead of the rofi switcher.
+-- A marker file (~/.cache/hypr-wallpaper.applied) records the last applied
+-- path, so reloads WITHOUT a path change (and --verify-config runs) only
+-- re-read the cache and touch nothing.
+-- (Lua can't `source` hyprlang's colors-hyprland.conf, hence the parse.)
+-- Defaults below mirror hypr/wallust/wallust-hyprland.conf (template).
+
+local V = require("lua.vars")
 
 local M = {
   background = "rgb(000004)",
@@ -30,11 +33,38 @@ local M = {
   color15 = "rgb(EDEFF1)",
 }
 
--- Overlay live values from wallust's generated hyprlang file, if present.
--- NOTE: this runs at (re)load time only; after `wallust run` re-generate,
--- run `hyprctl reload` so the new palette is picked up.
-local cachePath = (os.getenv("HOME") or "/home/osbby") .. "/.cache/wallust/colors-hyprland.conf"
-local f = io.open(cachePath, "r")
+local HOME = V.home
+local cacheFile = HOME .. "/.cache/wallust/colors-hyprland.conf"
+local markerFile = HOME .. "/.cache/hypr-wallpaper.applied"
+
+local function readMarker()
+  local f = io.open(markerFile, "r")
+  if not f then
+    return nil
+  end
+  local last = f:read("*l")
+  f:close()
+  return last
+end
+
+local function applyWallpaper(path)
+  local q = string.format("%q", path)
+  os.execute("wallust run " .. q .. " >/dev/null 2>&1")
+  os.execute("pkill swaybg 2>/dev/null; swaybg -i " .. q .. " -m fill >/dev/null 2>&1 &")
+  local f = io.open(markerFile, "w")
+  if f then
+    f:write(path)
+    f:close()
+  end
+end
+
+-- Refresh theme only when the path actually changed.
+if readMarker() ~= V.wallpaper then
+  applyWallpaper(V.wallpaper)
+end
+
+-- Overlay (fresh or previous) wallust values onto the defaults.
+local f = io.open(cacheFile, "r")
 if f then
   for line in f:lines() do
     local name, value = line:match("^%$(%w+)%s*=%s*(.-)%s*$")
