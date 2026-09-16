@@ -1,1 +1,25 @@
-/home/osbby/.config/waybar/wallust/colors-waybar.css
+@define-color theme_base_color {{background}};
+@define-color theme_text_color {{foreground}};
+@define-color text {{foreground}};
+@define-color background {{background}};
+@define-color overlay0 {{color0}};
+@define-color overlay1 {{color7}};
+@define-color surface0 {{color0}};
+@define-color surface1 {{color8}};
+@define-color surface2 {{color9}};
+@define-color blue {{color4}};
+@define-color lavender {{color12}};
+@define-color sky {{color6}};
+@define-color teal {{color14}};
+@define-color green {{color2}};
+@define-color yellow {{color3}};
+@define-color peach {{color11}};
+@define-color maroon {{color1}};
+@define-color red {{color1}};
+@define-color mauve {{color5}};
+@define-color pink {{color13}};
+@define-color flamingo {{color5}};
+@define-color rosewater {{color13}};
+@define-color sapphire {{color14}};
+@define-color subtext0 {{color7}};
+@define-color subtext1 {{color15}};

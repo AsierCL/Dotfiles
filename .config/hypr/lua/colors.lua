@@ -1,13 +1,14 @@
 -- DYNAMIC PALETTE (wallust) tied to the wallpaper path in lua/vars.lua.
 -- FLOW: edit the `wallpaper` path in vars.lua by hand -> `hyprctl reload` ->
 --   this module 1) runs `wallust run <new>` (regenerates the cache),
---   2) restarts swaybg on the new image, 3) parses the fresh cache into the
---   C.color* table used by style.lua. Same as the old .conf behaviour, but
---   driven by the path edit instead of the rofi switcher.
+--   2) restarts swaybg on the new image, 3) parses the fresh kitty cache
+--   (~/.cache/wallust/colors-kitty.conf, plain `name #hex` lines) into the
+--   C.background/foreground/color0-15 table used by style.lua. Same as the
+--   old .conf behaviour, but driven by the path edit instead of rofi.
+--   (Hyprland accepts #hex colors directly, so no conversion is needed.)
 -- A marker file (~/.cache/hypr-wallpaper.applied) records the last applied
 -- path, so reloads WITHOUT a path change (and --verify-config runs) only
 -- re-read the cache and touch nothing.
--- (Lua can't `source` hyprlang's colors-hyprland.conf, hence the parse.)
 -- Defaults below mirror hypr/wallust/wallust-hyprland.conf (template).
 
 local V = require("lua.vars")
@@ -34,7 +35,7 @@ local M = {
 }
 
 local HOME = V.home
-local cacheFile = HOME .. "/.cache/wallust/colors-hyprland.conf"
+local kittyCache = HOME .. "/.cache/wallust/colors-kitty.conf"
 local markerFile = HOME .. "/.cache/hypr-wallpaper.applied"
 
 local function readMarker()
@@ -78,10 +79,11 @@ elseif not swaybgRunning() then
 end
 
 -- Overlay (fresh or previous) wallust values onto the defaults.
-local f = io.open(cacheFile, "r")
+-- Kitty cache format is one `name value` pair per line, e.g. `color12 #9F9595`.
+local f = io.open(kittyCache, "r")
 if f then
   for line in f:lines() do
-    local name, value = line:match("^%$(%w+)%s*=%s*(.-)%s*$")
+    local name, value = line:match("^(%S+)%s+(#%x+)%s*$")
     if name and value and M[name] ~= nil then
       M[name] = value
     end
