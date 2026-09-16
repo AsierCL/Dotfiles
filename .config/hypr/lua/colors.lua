@@ -58,9 +58,23 @@ local function applyWallpaper(path)
   end
 end
 
--- Refresh theme only when the path actually changed.
+local function swaybgRunning()
+  local h = io.popen("pgrep -x swaybg 2>/dev/null")
+  if not h then
+    return false
+  end
+  local out = h:read("*a")
+  h:close()
+  return out ~= nil and out:match("%d+") ~= nil
+end
+
+-- Refresh theme only when the path actually changed; on a fresh login with
+-- an unchanged path just make sure the swaybg backend is up (startup.lua no
+-- longer launches it, this module owns the wallpaper end to end).
 if readMarker() ~= V.wallpaper then
   applyWallpaper(V.wallpaper)
+elseif not swaybgRunning() then
+  os.execute("swaybg -i " .. string.format("%q", V.wallpaper) .. " -m fill >/dev/null 2>&1 &")
 end
 
 -- Overlay (fresh or previous) wallust values onto the defaults.

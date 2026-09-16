@@ -1,8 +1,8 @@
 -- /* ---- 💫 https://github.com/JaKooLit 💫 ---- */ --
 -- Hyprland Lua entry point (replaces the old hyprland.conf `source=` chain).
--- Migrated from hyprlang (.conf) on v0.56.2. Old .conf files are kept as
--- backup; to roll back, point Hyprland back at hyprland.conf
--- (or `hyprctl reload full-reset` after restoring it).
+-- Migrated from hyprlang (.conf) on v0.56.2. The old .conf files are archived
+-- in hypr/legacy-hyprlang/; to roll back, move hyprland.conf back to hypr/
+-- and restart Hyprland (or `hyprctl reload full-reset` after restoring it).
 --
 -- ── MODULE MAP ──────────────────────────────────────────────────────
 --   lua/vars.lua       shared constants (terminal, dirs, touchpad name)

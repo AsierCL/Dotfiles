@@ -143,6 +143,13 @@ if [[ ! -d "$dir" ]]; then
 	mkdir -p "$dir"
 fi
 
+# auto-cleanup: every screenshot run deletes captures older than 7 days,
+# so ~/Pictures/Screenshots never grows unbounded. Only Screenshot_*.png
+# files at the top level are touched — anything else you store there is safe.
+if [[ -d "$dir" ]]; then
+	find "$dir" -maxdepth 1 -type f -name 'Screenshot_*.png' -mtime +7 -delete 2>/dev/null
+fi
+
 if [[ "$1" == "--now" ]]; then
 	shotnow
 elif [[ "$1" == "--in5" ]]; then
