@@ -19,7 +19,7 @@ SUPER + 1..0 ─ workspace                   | SUPER + SHIFT + 1..0 ─ move win
 SUPER + CTRL + 1..0 ─ move silently        | SUPER + Tab ─ next monitor workspace
 SUPER + U ─ special scratchpad             | SUPER + SHIFT + U ─ send to special
 SUPER + SHIFT + T ─ scratchpad files       | SUPER + Z ─ desktop zoom (pypr)
-SUPER + CTRL + S ─ night light toggle      | SUPER + ALT + K ─ keyboard layout (us/es)
+SUPER + CTRL + S ─ night light toggle      | SUPER + ALT + K ─ keyboard layout (us/es) | SUPER + CTRL + A ─ audio output
 SUPER + Print ─ screenshot                 | + SHIFT area · + CTRL 5s delay
 ALT + Print ─ active window shot           | F6 variants (laptop, same mods)
 ALT + Tab ─ cycle floating on top          | SUPER + scroll ─ prev/next workspace

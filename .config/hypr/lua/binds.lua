@@ -139,6 +139,7 @@ hl.bind(M .. " + SHIFT + Return", hl.dsp.exec_cmd("pypr toggle term")) -- pypr d
 hl.bind(M .. " + SHIFT + T", hl.dsp.exec_cmd("pypr toggle files")) -- pypr dropdown files (ranger, see pyprland.toml)
 hl.bind(M .. " + Z", hl.dsp.exec_cmd("pypr zoom"))
 hl.bind(M .. " + ALT + K", hl.dsp.exec_cmd(S .. "/SwitchKeyboardLayout.sh"), { non_consuming = true })
+hl.bind(M .. " + CTRL + A", hl.dsp.exec_cmd(S .. "/SwitchSoundOutput.sh"), { description = "Switch audio output" })
 
 -- Night light toggle (hyprsunset must be running, see startup.lua).
 -- Flips between warm 4500K and neutral; the time profiles in

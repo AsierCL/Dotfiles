@@ -23,11 +23,12 @@ local C = require("lua.colors")
 
 hl.config({
   general = {
-    border_size = 2,
+    border_size = 1, -- slim borders (was 2); 0 disables them entirely
     gaps_in = 6,
     gaps_out = 8,
     col = {
-      active_border = C.color12,
+      -- Gradient border: wallust accent -> sand. Revert to C.color12 alone for solid.
+      active_border = { colors = { C.color12, C.color13 }, angle = 45 },
       inactive_border = C.color10,
     },
   },
@@ -37,12 +38,12 @@ hl.config({
     inactive_opacity = 0.9,
     fullscreen_opacity = 1.0,
     dim_inactive = true,
-    dim_strength = 0.1,
+    dim_strength = 0.15, -- focus pop on the active window (was 0.1)
     dim_special = 0.8,
     shadow = {
       enabled = true,
-      range = 3,
-      render_power = 1,
+      range = 6, -- soft depth (was 3)
+      render_power = 2, -- (was 1)
       color = C.color12,
       color_inactive = C.color10,
     },
@@ -74,7 +75,7 @@ hl.curve("smoothIn", { type = "bezier", points = { { 0.5, -0.5 }, { 0.68, 1.5 } 
 
 -- animation = <leaf>, <enabled>, <speed (deciseconds)>, <curve>, <style>
 hl.animation({ leaf = "windows", enabled = true, speed = 6, bezier = "wind", style = "slide" })
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 5, bezier = "winIn", style = "slide" })
+hl.animation({ leaf = "windowsIn", enabled = true, speed = 5, bezier = "winIn", style = "popin 80%" })
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "smoothOut", style = "slide" })
 hl.animation({ leaf = "windowsMove", enabled = true, speed = 5, bezier = "wind", style = "slide" })
 hl.animation({ leaf = "border", enabled = true, speed = 1, bezier = "liner" })
@@ -82,6 +83,6 @@ hl.animation({ leaf = "border", enabled = true, speed = 1, bezier = "liner" })
 -- NOTE: Lua caps animation speed at 100 (old .conf used 180 here)
 hl.animation({ leaf = "borderangle", enabled = true, speed = 100, bezier = "liner", style = "loop" })
 hl.animation({ leaf = "fade", enabled = true, speed = 3, bezier = "smoothOut" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "overshot" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 5, bezier = "winIn", style = "slide" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 5, bezier = "winOut", style = "slide" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "overshot", style = "slidefade" })
+hl.animation({ leaf = "workspacesIn", enabled = true, speed = 5, bezier = "winIn", style = "slidefade" })
+hl.animation({ leaf = "workspacesOut", enabled = true, speed = 5, bezier = "winOut", style = "slidefade" })
