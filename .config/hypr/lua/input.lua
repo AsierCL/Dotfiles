@@ -1,6 +1,7 @@
 -- /* ---- 💫 https://github.com/JaKooLit 💫 ---- */ --
--- INPUT & CORE BEHAVIOUR (<- UserConfigs/UserSettings.conf + touchpad device
--- from Laptops.conf; trackpad *gestures* live in lua/gestures.lua)
+-- INPUT & CORE BEHAVIOUR (<- UserConfigs/UserSettings.conf; per-device
+-- sensitivity/touchpad lives in lua/devices.lua; trackpad *gestures* in
+-- lua/gestures.lua)
 -- ── HOW TO ──────────────────────────────────────────────────────────
 --   Layout engine: general.layout = "dwindle" | "master" (+ dwindle.* /
 --     master.* tables above it). Per-workspace layouts go in workspaces.lua.
@@ -12,8 +13,6 @@
 --   Window swallowing: misc.enable_swallow + swallow_regex (here: kitty).
 --   VRR: misc.vrr (0 off … 2 fullscreen). Screenshot/vrr quirks per-window
 --     go in rules.lua. Wiki: configuring/core/* (devices, config-options).
-
-local V = require("lua.vars")
 
 hl.config({
   dwindle = {
@@ -96,6 +95,3 @@ hl.config({
     enforce_permissions = true,
   },
 })
-
--- Per-device: laptop touchpad (<- Laptops.conf $Touchpad_Device / $TOUCHPAD_ENABLED)
-hl.device({ name = V.touchpadDevice, enabled = true })
