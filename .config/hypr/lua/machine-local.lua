@@ -14,5 +14,5 @@ return {
   },
   -- Laptop built-in trackpad (<- old Laptops.conf $Touchpad_Device).
   -- Harmless on the desktop (device simply never appears there).
-  touchpad = "asue1209:00-04f3:319f-touchpad",
+  touchpad = "elan0718:00-04f3:30fd-touchpad",
 }
