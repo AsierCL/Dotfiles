@@ -12,11 +12,9 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
   hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 
-  -- Wallpaper: always (re)start swaybg on boot so an existing marker file
-  -- (which makes lua/colors.lua skip its own start) never leaves us blank.
-  local V = require("lua.vars")
-  hl.exec_cmd("pkill swaybg 2>/dev/null; swaybg -i '" .. V.wallpaper .. "' -m fill")
-  hl.exec_cmd("wallust run '" .. V.wallpaper .. "' >/dev/null 2>&1")
+  -- Wallpaper + theme are owned by lua/colors.lua (runs wallust, (re)starts
+  -- swaybg when vars.lua's path changed and ensures swaybg is up otherwise),
+  -- so nothing wallpaper-related is needed here.
 
   -- Bar / applets (nm-applet, swaync, blueman-applet were commented out)
   hl.exec_cmd("waybar")

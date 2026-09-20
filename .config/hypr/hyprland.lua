@@ -5,13 +5,14 @@
 -- and restart Hyprland (or `hyprctl reload full-reset` after restoring it).
 --
 -- ── MODULE MAP ──────────────────────────────────────────────────────
---   lua/vars.lua       shared constants (terminal, dirs, touchpad name)
+--   lua/vars.lua       shared constants (terminal, dirs, wallpaper)
 --   lua/env.lua        environment variables (toolkit backends, NVIDIA…)
 --   lua/monitors.lua   monitor layout (resolutions, positions, scale)
 --   lua/workspaces.lua workspace -> monitor assignment
 --   lua/style.lua      borders/gaps/decoration/wallust colors + animations
---   lua/input.lua      keyboard/mouse/touchpad, layouts, misc, cursor…
---   lua/devices.lua    dynamic pointer sensitivity on dock/undock
+--   lua/input.lua      keyboard/layouts/misc/cursor…
+--   lua/devices.lua    per-device sensitivity (mice + touchpad)
+--   lua/permissions.lua persistent allow-list (screen share, …; needs restart)
 --   lua/rules.lua      window + layer rules (tags, float, opacity…)
 --   lua/binds.lua      ALL keybinds, incl. laptop Fn keys
 --   lua/gestures.lua   trackpad gestures (>= 0.51 syntax)
@@ -28,13 +29,13 @@
 --   start-hyprland -- --config ~/.config/hypr/hyprland.lua   (from a TTY)
 -- DOCS: local wiki in ~/.config/hyprland-wiki + /usr/share/hypr/stubs (LSP).
 
-require("lua.vars") -- shared constants (no side effects)
 require("lua.env") -- environment variables
 require("lua.monitors") -- monitor layout (+ laptop placeholder)
 require("lua.workspaces") -- workspace -> monitor assignment
 require("lua.style") -- borders/gaps/decoration/colors + animations
-require("lua.input") -- layouts/input/misc/binds-opts/cursor + touchpad device
-require("lua.devices") -- dynamic sensitivity (external mouse vs touchpad)
+require("lua.input") -- layouts/input/misc/binds-opts/cursor
+require("lua.devices") -- per-device sensitivity (mice + touchpad)
+require("lua.permissions") -- persistent allow-list (restart to apply)
 require("lua.rules") -- window + layer rules
 require("lua.binds") -- all keybinds (incl. laptop keys)
 require("lua.gestures") -- trackpad gestures (>= 0.51 syntax)

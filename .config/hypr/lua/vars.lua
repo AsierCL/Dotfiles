@@ -22,6 +22,5 @@ M.scriptsDir = M.hyprDir .. "/scripts"
 M.userScripts = M.hyprDir .. "/UserScripts"
 M.userConfigs = M.hyprDir .. "/UserConfigs" -- legacy .conf dir (kept as backup)
 M.wallpaper = HOME .. "/.config/wallpapers/panda.png"
-M.touchpadDevice = "asue1209:00-04f3:319f-touchpad"
 
 return M
