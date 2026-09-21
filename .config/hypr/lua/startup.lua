@@ -12,9 +12,9 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
   hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 
-  -- Wallpaper + theme are owned by lua/colors.lua (runs wallust, (re)starts
-  -- swaybg when vars.lua's path changed and ensures swaybg is up otherwise),
-  -- so nothing wallpaper-related is needed here.
+  -- Wallpaper + theme are owned by lua/colors.lua (wallust runs at
+  -- config-parse time; swaybg launches on every login via its own
+  -- hyprland.start handler), so nothing wallpaper-related is needed here.
 
   -- Bar / applets (nm-applet, swaync, blueman-applet were commented out)
   hl.exec_cmd("waybar")

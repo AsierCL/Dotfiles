@@ -1,12 +1,14 @@
 -- DYNAMIC PALETTE (wallust) tied to the wallpaper path in lua/vars.lua.
 -- FLOW: edit the `wallpaper` path in vars.lua by hand -> `hyprctl reload` ->
---   this module 1) runs `wallust run <new>` (regenerates the cache),
---   2) restarts swaybg on the new image, 3) parses the fresh kitty cache
+--   this module 1) runs `wallust run <new>` at parse time (regenerates the
+--   cache, no Wayland needed), 2) (re)launches swaybg on the image via a
+--   hyprland.start handler (deferred: the Wayland socket may not exist yet
+--   at parse time), 3) parses the fresh kitty cache
 --   (~/.cache/wallust/colors-kitty.conf, plain `name #hex` lines) into the
 --   C.background/foreground/color0-15 table used by style.lua. Same as the
 --   old .conf behaviour, but driven by the path edit instead of rofi.
 --   (Hyprland accepts #hex colors directly, so no conversion is needed.)
--- A marker file (~/.cache/hypr-wallpaper.applied) records the last applied
+-- A marker file (~/.cache/hypr-wallpaper.applied) records the last themed
 -- path, so reloads WITHOUT a path change (and --verify-config runs) only
 -- re-read the cache and touch nothing.
 -- Defaults below mirror hypr/wallust/wallust-hyprland.conf (template).
@@ -48,35 +50,28 @@ local function readMarker()
   return last
 end
 
-local function applyWallpaper(path)
-  local q = string.format("%q", path)
-  os.execute("wallust run " .. q .. " >/dev/null 2>&1")
-  os.execute("pkill swaybg 2>/dev/null; swaybg -i " .. q .. " -m fill >/dev/null 2>&1 &")
+local function shQuote(path)
+  return "'" .. path:gsub("'", "'\\''") .. "'"
+end
+
+-- Theme refresh (no Wayland needed, safe at config-parse time): when the
+-- path changed, regenerate wallust caches and record the marker.
+if readMarker() ~= V.wallpaper then
+  os.execute("wallust run " .. shQuote(V.wallpaper) .. " >/dev/null 2>&1")
   local f = io.open(markerFile, "w")
   if f then
-    f:write(path)
+    f:write(V.wallpaper)
     f:close()
   end
 end
 
-local function swaybgRunning()
-  local h = io.popen("pgrep -x swaybg 2>/dev/null")
-  if not h then
-    return false
-  end
-  local out = h:read("*a")
-  h:close()
-  return out ~= nil and out:match("%d+") ~= nil
-end
-
--- Refresh theme only when the path actually changed; on a fresh login with
--- an unchanged path just make sure the swaybg backend is up (startup.lua no
--- longer launches it, this module owns the wallpaper end to end).
-if readMarker() ~= V.wallpaper then
-  applyWallpaper(V.wallpaper)
-elseif not swaybgRunning() then
-  os.execute("swaybg -i " .. string.format("%q", V.wallpaper) .. " -m fill >/dev/null 2>&1 &")
-end
+-- Wallpaper backend (needs the compositor UP, so it must NOT run at
+-- config-parse time: the Wayland socket may not exist yet and swaybg would
+-- exit immediately — black background after reboot). Launched on every
+-- login via the hyprland.start event instead (hl.exec_cmd is async).
+hl.on("hyprland.start", function()
+  hl.exec_cmd("pkill swaybg 2>/dev/null; swaybg -i " .. shQuote(V.wallpaper) .. " -m fill")
+end)
 
 -- Overlay (fresh or previous) wallust values onto the defaults.
 -- Kitty cache format is one `name value` pair per line, e.g. `color12 #9F9595`.
