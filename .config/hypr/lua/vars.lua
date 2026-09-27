@@ -12,7 +12,7 @@ local M = {
   home = HOME,
   mainMod = "SUPER",
   term = "kitty",
-  files = "nautilus",
+  files = "nautilus --new-window",
   browser = "zen-browser",
   editor = "nvim",
 }
