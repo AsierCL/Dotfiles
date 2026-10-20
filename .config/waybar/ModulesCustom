@@ -17,6 +17,15 @@
 	"tooltip": true,
 },
 
+"custom/opencode-usage": {
+	"format": "{}",
+	"return-type": "json",
+	"interval": 300,
+	"exec": "python3 $HOME/.config/waybar/scripts/opencode-usage.py",
+	"on-click": "xdg-open https://opencode.ai/console",
+	"tooltip": true,
+},
+
 // Hypridle inhibitor
 "custom/keyboard": {
 	"exec": "cat $HOME/.cache/kb_layout 2>/dev/null || echo 'US'",

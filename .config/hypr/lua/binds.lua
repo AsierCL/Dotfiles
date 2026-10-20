@@ -34,8 +34,8 @@ hl.bind(M .. " + C", hl.dsp.window.close()) -- kill active window
 hl.bind(M .. " + F", hl.dsp.window.fullscreen()) -- toggle fullscreen
 hl.bind(M .. " + SHIFT + F", hl.dsp.window.float()) -- toggle floating
 hl.bind(M .. " + ALT + F", hl.dsp.exec_cmd("hyprctl dispatch workspaceopt allfloat")) -- all windows floating
-hl.bind("CTRL + ALT + L", hl.dsp.exec_cmd(S .. "/LockScreen.sh"))
-hl.bind("CTRL + ALT + P", hl.dsp.exec_cmd(S .. "/Wlogout.sh"))
+hl.bind(M .. " + L", hl.dsp.exec_cmd(S .. "/LockScreen.sh"))
+hl.bind(M .. " + P", hl.dsp.exec_cmd(S .. "/Wlogout.sh"))
 
 -- Dwindle layout
 hl.bind(M .. " + I", hl.dsp.layout("togglesplit"))

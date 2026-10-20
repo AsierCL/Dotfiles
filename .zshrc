@@ -7,3 +7,6 @@ source "$ZSH_CONFIG/plugins.zsh"
 source "$ZSH_CONFIG/aliases.zsh"
 source "$ZSH_CONFIG/theme-mnml.zsh"
 # NOTE: ~/go/bin and the rest of PATH live in env.zsh (de-duplicated there).
+
+# Composio CLI
+export PATH="$HOME/.local/bin:$PATH"

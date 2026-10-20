@@ -42,6 +42,8 @@
 "modules-right": [
 	"network#speed",
 	"custom/separator#dot-line",
+	"custom/opencode-usage",
+	"custom/separator#dot-line",
 	"group/laptop",
 	"custom/separator#dot-line",
 	"group/mobo_drawer",

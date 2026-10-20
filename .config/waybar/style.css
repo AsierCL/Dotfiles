@@ -103,6 +103,7 @@ window#waybar.empty #window {
 #custom-cava_mviz,
 #custom-keyboard,
 #custom-lock,
+#custom-opencode-usage,
 #custom-playerctl,
 #custom-power,
 #custom-swaync,
@@ -204,6 +205,10 @@ window#waybar.empty #window {
 
 #custom-lock {
   color: @maroon;
+}
+
+#custom-opencode-usage {
+  color: @teal;
 }
 
 #pulseaudio {
