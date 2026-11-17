@@ -8,6 +8,8 @@
 
 hl.workspace_rule({ workspace = "7", monitor = "desc:Fujitsu Siemens Computers GmbH P24W-6 LED YV5L004610" })
 hl.workspace_rule({ workspace = "10", monitor = "desc:Fujitsu Siemens Computers GmbH P24W-6 LED YV5L004610" })
+-- Keep the Pi-controlled headed Chromium window on the secondary monitor.
+hl.workspace_rule({ workspace = "12", monitor = "DP-2" })
 
 -- Examples (from old workspaces.conf comments):
 -- hl.workspace_rule({ workspace = "1", monitor = "eDP-1" })

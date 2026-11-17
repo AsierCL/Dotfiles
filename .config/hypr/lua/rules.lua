@@ -28,6 +28,9 @@ hl.window_rule({ match = { class = [[^([Mm]icrosoft-edge(-stable|-beta|-dev|-uns
 hl.window_rule({ match = { class = [[^(Brave-browser(-beta|-dev|-unstable)?)$]] }, tag = "+browser" })
 hl.window_rule({ match = { class = [[^([Tt]horium-browser|[Cc]achy-browser)$]] }, tag = "+browser" })
 hl.window_rule({ match = { class = [[^(zen-alpha)$]] }, tag = "+browser" })
+-- Pi's headed Playwright MCP browser gets its own class and dedicated workspace
+-- so it stays visible on the second monitor instead of covering the Pi TUI.
+hl.window_rule({ match = { class = [[^(pi-playwright)$]] }, workspace = "12" })
 -- Terminals
 hl.window_rule({ match = { class = [[^(Alacritty|kitty|kitty-dropterm|pypr-term)$]] }, tag = "+terminal" })
 -- Email
